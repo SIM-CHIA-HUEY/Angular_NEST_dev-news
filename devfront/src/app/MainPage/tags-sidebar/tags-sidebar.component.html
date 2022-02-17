@@ -1,0 +1,24 @@
+    <div class="containerTags">
+        <div class="selectedTags">
+            <h1 class="title">Select Tags # :</h1>
+
+            <!-- Displayed version on desktop : list -->
+            <ul class="selectedTags-desktop" (click)="tagSelected($event)">
+                <li *ngFor="let tag of arrayOfTags" [ngClass]="{'isSelected': tag.className}">
+                    {{ tag.tagName }}
+                </li>
+            </ul>
+
+            <!-- Displayed version on mobile : buttons -->
+            <!-- <ul class="selectedTags-mobile" (click)="tagSelected($event)">
+                <button *ngFor="let tag of arrayOfTags" [ngClass]="{'isSelected': tag.className}">
+                    {{ tag.tagName }}
+                </button>
+            </ul> -->
+
+        </div>
+        <h2>{{selectedTagsId}}</h2>
+
+
+        
+    </div>

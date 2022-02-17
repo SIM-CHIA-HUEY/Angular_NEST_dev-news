@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="title">
+        <a href="/users/{{userId}}">
+            <p>
+                <- Back to my Account</p>
+        </a>
+    </div>
+
+    <div class="title">
+        <p>Manage my Articles</p>
+    </div>
+    <div class="articlesContainer" *ngFor="let item of arrayArticles">
+        <div class="articleTitle">
+            {{item['articleTitle']}}
+        </div>
+        <div>
+            {{item['articleSynopsis']}}
+        </div>
+
+        <a routerLink="/articleedit/{{item['id']}}"><button class="buttonStyle1">Edit</button></a>
+        <button class="buttonStyle2" (click)="deleteArticle()">Delete</button>
+    </div>
+
+</div>

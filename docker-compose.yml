@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  back:
+    container_name: devnews-back
+    build:
+      context: ./devback
+      target: development
+    volumes:
+      - ./devback:/usr/src/app/devback
+      - /usr/src/app/devback/node_modules
+    ports:
+      - 3000:3000
+    command: npm run start:dev
+    networks:
+      - webnet
+  front:
+    container_name: devnews-front
+    build:
+      context: ./devfront
+    volumes:
+      - ./devfront:/usr/src/app/devfront
+      - /usr/src/app/devfront/node_modules
+    ports:
+      - 4200:4200
+    command: npm start
+    networks:
+      - webnet
+networks:
+  webnet:
+volumes:
+  pgdata:

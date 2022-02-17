@@ -1,0 +1,49 @@
+<div>
+    <div class="box">
+        <div class="sidebar">
+            <div class="nblike">{{nbLikes}}</div>
+            <div class="logolike" (click)="handleLike()"><img *ngIf="isLiked===true" src="../../assets/likeon.png"/><img *ngIf="isLiked===false" src="../../assets/likeoff.png"/></div>   
+            <div class="like">Like</div>
+            <div class="nbdislike">{{nbDislikes}}</div>
+            <div class="logodislike" (click)="handleDislike()"><img *ngIf="isDisliked===true" src="../../assets/dislikeon.png"/><img *ngIf="isDisliked===false" src="../../assets/dislikeoff.png"/></div>  
+            <div class="dislike">Dislike</div>
+            <div class="nbcomment">{{nbComments}}</div>
+            <div class="logocomment"><img src="../../assets/comment.png"/></div>  
+            <div class="comment">Comment</div>
+            <div class="logofavorite" (click)="handleFavorite()"><img *ngIf="isFavorite===true" src="../../assets/favoriteon.png"/><img *ngIf="isFavorite===false" src="../../assets/favoriteoff.png"/></div> 
+            <div class="favorite">Favorite</div>
+            <div class="logodownload" (click)="handleDownload()"><img src="../../assets/download.png"/></div> 
+            <div class="download">Download</div>
+            <share-button button="facebook" theme="circles-dark" [icon]="fbIcon" class="sharefacebook"></share-button>
+            <share-button button="twitter" theme="circles-dark" [icon]="tweetIcon" class="sharetwitter"></share-button>
+            <share-button button="email" theme="circles-dark" class="shareemail"></share-button>
+        </div>
+        <div class="article"> 
+            <iframe [src]="articlePath | safe" width="820px" height="700px"></iframe>
+        </div>    
+    </div>
+
+    <button *ngIf="isLogged===true" class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Create a comment</button>
+
+    <ng-template #mymodal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Create a comment</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="newComment">
+        <textarea maxlength="255" class="commentNewMode" rows="6" [(ngModel)]="newComment"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+      </div>
+    </ng-template>
+
+    <app-comments  *ngFor="let item of arrayCommentsDisplayed" class="test" [id]="item.id" [articleId]="item.articleId" [pxl]="item.pxl" (sendRefreshComments)="refreshComments()"></app-comments>
+
+</div>
+
+
+        <!-- <iframe [src]="testURL | safe"  
+        width="450px" height="250px"></iframe> -->

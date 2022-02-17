@@ -1,0 +1,74 @@
+<div class="login-page">
+  <img class="login-bg">
+
+  <div class="login-title-div">
+    <span class="login-title">THE DAILY DEV.NEWS <span style="color: #000000; border-style: none">LOGIN</span></span>
+  </div>
+
+  <div class="row login-row">
+
+
+    <div class="col-sm login-form">
+
+      <!-- <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate> -->
+      <form #myForm="ngForm" (ngSubmit)="login()">
+        <!-- Username input -->
+        <div class="form-group row">
+          <label for="username" class="col-sm-3 col-form-label">USERNAME:</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="username" name="username" required [(ngModel)]="form.username"
+              #username="ngModel">
+            <!-- Username's validations error messages -->
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="danger-alert">
+              <div *ngIf="username.errors?.['required']">
+                * Username is required.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-group row">
+          <label for="password" class="col-sm-3 col-form-label">PASSWORD:</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="password" name="password" required
+              [(ngModel)]="form.password" #password="ngModel">
+            <!-- Password's validations error messages -->
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="danger-alert">
+              <div *ngIf="password.errors?.['required']">
+                * Password is required
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button class="btn btn-outline-dark" (click)="reset()">Cancel</button>
+          <button type="submit" class="btn btn-dark" [disabled]="!myForm.valid">Send</button>
+        </div>
+
+      </form>
+
+      <div class="row third-party-register">
+            <button class="social-button" (click)="loginWithRedirect()" mat-raised-button>
+              <img class="social-media-logo" src="assets/github-logo.png">
+              Log in With GitHub
+            </button> 
+
+            <button class="social-button" (click)="loginWithGoogle()" mat-raised-button>
+              <img class="social-media-logo" src="assets/google-logo.png">Log in with
+                Google
+            </button>
+      </div>
+
+    </div>
+
+    <div class="col-sm login-content">
+      <img class="content-image" src="assets/icons-login.png">
+      <p class="login-extract-title"> {{randomTitle}} </p>
+      <p> {{randomArticle}} </p>
+    </div>
+
+
+</div>

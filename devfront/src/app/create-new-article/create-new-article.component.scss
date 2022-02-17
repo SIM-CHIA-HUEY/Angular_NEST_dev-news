@@ -1,0 +1,76 @@
+.articlesContainer {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+.articleSynopsis{
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 250px;
+    vertical-align: top;
+    width: 90%;
+    white-space:normal;
+}
+.articleTitle {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+textarea {
+    height: 80%;
+    width: 100%;
+}
+.Title {
+    font-weight: bold;
+    margin-top: 2%;
+}
+.buttonStyle1 {
+    background: #705D4A;
+    border-radius: 5px;
+    height: 39px;
+    color: #FFFFFF;
+    margin: 5px;    
+}
+.buttonStyle2 {
+    background: #FFFFFF;
+    border-radius: 5px;
+    color: #030303;
+    height: 39px;
+}
+.file-input {
+    display: none;
+  }
+
+@media (min-width: 576px) {
+    .main{
+        margin-top:10%;
+    }
+}
+@media (max-width: 575px) {
+    .main{
+        margin-top:25% !important;
+    }
+}
+
+
+mat-card-content {
+    min-height: 120px;
+}
+mat-chip {
+    max-width: 100px;
+  }
+.newArticle {
+    // background: #FFFFFF;
+    margin-bottom:1%;
+    margin-left: 5%;  
+    margin-top:1%;
+    width: 90%;
+}
+.title{
+    border-bottom: 1px solid #B7B7B7;
+    color: #705D4A;
+    width: 90%;
+    margin-left: 5%;    
+}
+h3{
+    margin-top: 10px;
+    font-weight: bold;
+}

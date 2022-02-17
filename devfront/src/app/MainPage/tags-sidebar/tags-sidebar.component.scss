@@ -1,0 +1,67 @@
+ul {
+list-style-type: none;
+padding-left: 0%;
+}
+ul:hover {
+cursor: pointer;
+}
+
+.containerTags {
+    max-height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgba(112, 93, 74, 0.5);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    padding-top: 10px;
+    text-align: center;
+    color: black;
+}
+
+.title{
+    margin: 2px;
+}
+
+.isSelected {
+background-color: rgba(0, 0, 0, 0.1);
+font-weight: bold;
+}
+
+.selectedTags-desktop{
+padding-left: 15%;
+}
+
+h2 {
+    color: #705D4A;
+    padding-top: 1%;
+}
+
+button{
+    background-color: white;
+    margin: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+// // RESPONSIVE from list of tags to buttons
+// @media (min-width: 576px){
+//     .selectedTags-mobile{
+//         display: none;
+//     }
+// }
+// @media (max-width: 575px) {
+//     .selectedTags-desktop {
+//       display: none;
+//     }
+//   }
+@media screen and (max-width: 670px)
+{
+    .title{
+        visibility: hidden;
+    }
+}
+

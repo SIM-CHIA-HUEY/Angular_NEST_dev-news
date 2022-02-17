@@ -1,0 +1,357 @@
+// .box {
+//     max-width: 100vw;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-wrap: wrap;
+// }
+
+// app-header{
+//     max-width: 100vw;
+// }
+
+// // TOP PART
+// .searchBar{
+//     position:fixed; 
+//     top: 100px;
+//     opacity: 0.8;
+//     padding: 20px;
+// }
+// .slogan {
+//     padding-top: 10px;
+//     font-weight: 400;
+//     font-size: 15px;
+//     text-align: center;
+//     color: #2E2E2E;
+//     font-family: 'Rozha One', serif;
+// }
+
+// .row {
+//     max-width: 100vw !important;
+//     z-index: -1;
+// }
+
+// // RESPONSIVE PART : 
+// @media (min-width: 576px) {
+//     // TOP PART
+//     .searchBar{
+//         max-width:50vw;
+//     }
+// }
+// @media (max-width: 575px) {
+//     // TOP PART
+//     .searchBar{
+//         max-width:100vw;
+//     }
+// }
+
+// BOTTOM PART
+
+// // RESPONSIVE PART : 
+// @media (min-width: 576px) {
+//     .bottom {
+//         padding-top: 100px;
+//     }
+// }
+// @media (max-width: 575px) {
+//     .bottom {
+//         padding-top: 150px;
+//     }
+//     // TWITTER hidden on mobile
+//     .twitterNews{ 
+//         display: none;
+//     }
+// }
+
+// .article-section {
+//     // width: 100%;
+//     border-style: dotted;
+//     // position: absolute;
+// }
+
+// .sortLatest{
+//     grid-area: sortLatest;
+//     height: 11px;
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 9px;
+
+// }
+// .sortLatest:hover{
+//     border-color:rgb(24, 233, 4);
+// }
+
+// .sortTop{
+//     grid-area: sortTop;
+//     height: 11px;
+//     font-family: Roboto;
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 9px;
+//     margin-left: 10px;
+// }
+
+// .sortSelected{
+//     font-weight: 700;
+// }
+
+// .sortTextLatest{
+//     cursor:pointer;
+//     width:27px;
+// }
+
+// .sortTextTop{
+//     cursor:pointer;
+//     width:18px;
+// }
+
+
+// .tagList{
+//     height: 437px;
+//     top: 10;
+//     left: 0;
+// }
+
+// .twitterNews{
+//     height: 437px;
+//     top: 10;
+//     right: 0;
+//     max-height: 440px;
+// }
+
+.mainGrid{
+    margin-top:8%;
+    padding-left:5%;
+    padding-right:5%;
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-column-gap: 2%;
+    grid-template-areas: 
+    ". searchBar ."
+    ". sloganTop ."
+    ". sloganBottom ."
+    ". sort ."
+    "tagList articlesBox twitterNews"
+    ;
+}
+// .articlesBox:hover{
+//         border-color: rgb(24, 233, 4);
+
+// }
+
+.searchBar{ 
+    grid-area: searchBar;
+    height: 40px;
+    width:100%;
+    min-width:430px;
+    opacity: 0.8;
+}
+
+
+
+.sloganTop{
+    margin-top:4%;
+    grid-area: sloganTop;
+    height: 25px;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: #2E2E2E;
+    font-family: 'Rozha One', serif;
+    margin-top: 40px;
+}
+
+.sort{
+    grid-area: sort;
+    display:grid;
+    grid-template-columns: 1fr 1fr 6fr;
+    grid-template-areas: "sortLatest sortTop .";
+    height: 11px;
+    margin-bottom:1%;
+    margin-top: 20px;
+}
+
+.sortLatest{
+    grid-area: sortLatest;
+    height: 11px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+
+}
+.sortLatest:hover{
+    border-color:rgb(24, 233, 4);
+}
+
+.sortTop{
+    grid-area: sortTop;
+    height: 11px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    margin-left: 10px;
+}
+
+.sortSelected{
+    font-weight: 700;
+}
+
+.sortTextLatest{
+    cursor:pointer;
+    width:27px;
+}
+
+.sortTextTop{
+    cursor:pointer;
+    width:18px;
+}
+
+.tagList{
+    grid-area: tagList;
+    width:100%;
+    min-width: 60px;
+    max-width: 215px;
+    height: 437px;
+    margin-top: 20px;
+}
+
+.articlesBox{
+    grid-area: articlesBox;
+    width:100%;
+    min-width:430px;
+    min-height:800px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.twitterNews{
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #59320A;
+    box-sizing: border-box;
+    border-radius: 5px;
+    grid-area: twitterNews;
+    width:100%;
+    max-width: 225px;
+    height: auto;
+    max-height: 900px;
+    margin-top: 20px;
+    padding-left:7%;
+    padding-right:7%;
+    overflow:hidden;
+}
+
+@media screen and (min-width: 670px) and (max-width: 1020px)
+{
+    .mainGrid{
+        padding-left:1%;
+        padding-right:1%;
+        margin-top:10%;
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        grid-column-gap: 2%;
+        grid-template-areas: 
+        "searchBar searchBar"
+        "sloganTop sloganTop"
+        "sloganBottom sloganBottom"
+        ". sort"
+        "tagList articlesBox"
+        ;
+    }
+
+    .searchBar{
+        width:90%;
+    }
+
+    .tagList{
+        grid-area: tagList;
+        width:100%;
+        min-width: 215px;
+        height: 437px;
+    }
+    
+    .articlesBox{
+        grid-area: articlesBox;
+        margin:auto;
+        width:100%;
+        min-width:430px;
+        height:800px;
+    }
+
+    .twitterNews{
+        visibility: hidden;
+        width: 0px;
+        min-width: 0px;
+    }
+}
+
+@media screen and (max-width: 670px)
+{
+
+    .mainGrid{
+        padding-left:1%;
+        padding-right:1%;
+        margin-top:20%;
+        display:grid;
+        grid-template-columns: 1fr 4fr;
+        grid-column-gap: 0%;
+        grid-template-areas: 
+        "searchBar searchBar"
+        ". sort"
+        "tagList articlesBox"
+        ;
+    }
+
+    .searchBar{
+        grid-area: searchBar;
+        height: 40px;
+        width:100%;
+        min-width:340px;
+    }
+
+    .tagList{
+        grid-area: tagList;
+        width:100%;
+        min-width: 60px;
+        height: 437px;
+    }
+    
+    .articlesBox{
+        grid-area: articlesBox;
+        margin:auto;
+        width:100%;
+        min-width:300px;
+        height:800px;
+    }
+
+    .twitterNews{
+        visibility: hidden;
+        width: 0px;
+        min-width: 0px;
+    }
+
+    .sloganTop{
+        visibility: hidden;
+        width: 0px;
+        min-width: 0px;
+    }
+    
+    .sloganBottom{
+        visibility: hidden;
+        width: 0px;
+        min-width: 0px;
+    }
+
+    .sortLatest{
+        font-size: 10px;
+       
+    }
+    
+    .sortTop{
+        font-size: 10px;
+    }
+}

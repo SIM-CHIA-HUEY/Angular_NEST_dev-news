@@ -1,0 +1,54 @@
+.addComment{
+    position: relative;
+    margin-bottom:5px;
+    margin-left: 3%;
+    background-color: #38322B;
+    border:none;
+    color : white;
+}
+.box{
+    padding:20px;
+    height:80%;
+    width:100%;
+}
+.element-content {
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    resize: none;
+    width: 100%;
+    
+}
+.example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+
+.labelNewComment{
+    font-weight:bold;
+    color: #6B5743;
+}
+
+table {
+    width: 100%;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+  
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}

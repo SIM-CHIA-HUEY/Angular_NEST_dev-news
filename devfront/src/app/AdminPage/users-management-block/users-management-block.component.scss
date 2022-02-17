@@ -1,0 +1,25 @@
+.boxComponents{
+    margin: 1%;
+    background-color: rgba(255, 255, 255, .5);
+    width: 60%;
+    max-height: 30%;
+    margin-right: 4%;
+    box-shadow: 1px 1px 4px #38322B;
+    float: right;
+    overflow: auto;
+}
+
+
+*::-webkit-scrollbar {
+    width: 14px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #DADADA;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: 3px solid #DADADA;
+  }

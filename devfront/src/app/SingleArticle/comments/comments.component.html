@@ -1,0 +1,34 @@
+
+<div [ngStyle]="{ 'margin-left': pxl}">
+    <div class="commentBox">
+        <div class="imgClass"></div>
+        <div class="nameUser">{{nickName}}</div>
+        <div class="ageOfComment">Published {{ageOfComment}}</div>
+        <div *ngIf="isEditMode===false" class="comment" [ngClass]="{short: isShort === true}" (click)="toggleShort()">{{ content }}</div>
+        <textarea *ngIf="isEditMode===true" class="commentEditMode" name="commentEdited" rows="6" [(ngModel)]="content"></textarea>
+        <div *ngIf="isEditMode===false" class="reply" (click)="open(mymodal)">reply</div>
+        <div *ngIf="isCommentAuthor===true && isEditMode===true" class="validate" (click)="modifyMethod()">validate</div>
+        <div *ngIf="isCommentAuthor===true && isEditMode===false" class="modify" (click)="editModeMethod()">modify</div>
+        <div *ngIf="isCommentAuthor===true && isEditMode===false" class="delete" (click)="deleteMethod()">delete</div>
+        <div class="nbLikes">{{nbLikes}}</div>
+        <div class="logoLike" (click)="handleLike()"><img *ngIf="isLiked===true" src ="../../assets/likeon - small.png"/><img *ngIf="isLiked===false" src ="../../assets/likeoff - small.png"/></div>
+        <div class="nbDislikes">{{nbDislikes}}</div>
+        <div class="logoDislikes" (click)="handleDislike()"><img *ngIf="isDisliked===true" src ="../../assets/dislikeon - small.png"/><img *ngIf="isDisliked===false" src ="../../assets/dislikeoff - small.png"/></div>
+
+        <ng-template #mymodal let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Reply</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="newComment">
+            <textarea maxlength="255" class="commentNewMode" rows="6" [(ngModel)]="newComment"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
+        </ng-template>
+    </div>
+</div>
+

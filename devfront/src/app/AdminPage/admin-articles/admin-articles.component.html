@@ -1,0 +1,50 @@
+<div class="box">
+    <p class="admin-sub-cat-title">Manage articles</p>
+
+    <div class="row">
+        <div class="col-sm-12 manage-articles-col">
+            <table>
+            <tr *ngFor="let item of allarticle" class="table">
+                <td>
+                <label for="title">Title: </label>
+                <textarea type="text" class="name" name="tagTitle" [(ngModel)]="item['articleTitle']"></textarea>
+                <label for="title">Content: </label>
+                <textarea type="text" class="article" name="tagTitle" [(ngModel)]="item['articleSynopsis']"></textarea>
+                <div class='item'>Created At : {{item.date}}</div>
+                <div class='items'>Author : {{item.userId}}</div>
+            </td>
+                <!-- <div class="form-article" *ngFor="let item of articlesArray"> -->
+                  <td>
+                <button type="submit" class="btn btn-dark update-article-button"
+                    (click)="updateArticles(item.id,item.articleTitle,item.articleSynopsis,item.isValidated)">Save changes</button>
+                </td>  
+                <td>
+                <button class="btn btn-dark update-article-button"
+                    (click)="deleteArticle(item['id'])">Delete</button>
+                </td>
+                <td>
+                <label for="inlineCheckbox">Validated</label>
+                <input type="checkbox" id="inlineCheckbox" [(ngModel)]="item.isValidated" />
+            </td>
+            
+            <!-- </div> -->
+            </tr>
+        </table>
+
+                <!-- <button type="submit" class="btn btn-dark update-article-button"
+                    (click)="updateArticles(item.id,item.isValidated)">Save changes</button>
+
+                <button type="submit" class="btn btn-dark update-article-button"
+                    (click)="deleteArticle(item.id)">Delete</button>
+
+
+                <label for="inlineCheckbox">Validated</label> -->
+
+                <!-- <input type="checkbox" id="inlineCheckbox" [(ngModel)]="item.isValidated" /> -->
+
+<!-- 
+            </div> -->
+        </div>
+    </div>
+
+</div>

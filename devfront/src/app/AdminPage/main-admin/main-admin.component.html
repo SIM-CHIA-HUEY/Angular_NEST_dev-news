@@ -1,0 +1,59 @@
+<div class="page">
+    <!-- Sidebar -->
+    <div class="sidebar h-100 row justify-content-md-center m-0 p-1">
+        <div class="mt-5 d-flex flex-column col-12 col-lg-12 m-0 p-0">
+            <!-- Admin users button -->
+            <div class="mb-3" *ngIf="isAdmin===true && isLogged===true">
+                <button id="adminUsersButton" class="btn btn-purple w-100 d-flex"
+                    [class.btn-sel]="panelSelected === 'users'" (click)="selectPanel('users')">
+                    Users
+                </button>
+            </div>
+            <!-- Admin acticles button -->
+            <div class="mb-3" *ngIf="isLogged===true">
+                <button id="adminArticlesButton" class="btn btn-purple w-100 d-flex"
+                    [class.btn-sel]="panelSelected === 'articles'" (click)="selectPanel('articles')">
+                    Articles
+                </button>
+            </div>
+            <!-- Admin comments button -->
+            <div class="mb-3" *ngIf="isLogged===true">
+                <button id="adminCommentsButton" class="btn btn-purple w-100 d-flex"
+                    [class.btn-sel]="panelSelected === 'comments'" (click)="selectPanel('comments')">
+                    Comments
+                </button>
+            </div>
+            <!-- Admin tags button -->
+            <div class="mb-3" *ngIf="isAdmin===true && isLogged===true">
+                <button id="adminTagsButton" class="btn btn-purple w-100 d-flex"
+                    [class.btn-sel]="panelSelected === 'tags'" (click)="selectPanel('tags')">
+                    Tags
+                </button>
+            </div>
+            <!-- Newsletter button -->
+            <div class="mb-3" *ngIf="isLogged===true">
+                <button id="newsletterButton" class="btn btn-purple w-100 d-flex"
+                    [class.btn-sel]="panelSelected === 'newsletter'" (click)="selectPanel('newsletter')">
+                    Newsletter
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Main admin panel -->
+    <div class="col-12 col-md-12 panel">
+        <div v-if="activePanel === 'default'" class="px-3 mt-3">
+            <h1 *ngIf="isAdmin===true">Administration panel</h1>
+            <h1 *ngIf="isAdmin===false">Moderation panel</h1>
+            <hr>
+            <br>
+            <!-- <b-icon-arrow-return-left /> -->
+        </div>
+        
+        <app-admin-users *ngIf="panelSelected==='users'"></app-admin-users>
+        <app-admin-articles *ngIf="panelSelected==='articles'"></app-admin-articles>
+        <app-admin-comments *ngIf="panelSelected==='comments'"></app-admin-comments>
+        <app-admin-tags *ngIf="panelSelected==='tags'"></app-admin-tags>
+        <app-admin-newsletter *ngIf="panelSelected==='newsletter'"></app-admin-newsletter>
+    </div>
+
+</div>

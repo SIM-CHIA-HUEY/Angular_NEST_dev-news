@@ -1,0 +1,83 @@
+<!-- <div class="box">
+
+    <app-header></app-header>
+
+    <div class="searchBar">
+        <app-search-bar (sendSearchText)="receiveFilter($event)"></app-search-bar>
+        <p class="slogan">An Amazing Community Of Dev Sharing News,
+        Feel Free To Share, Like, Comment !</p>
+    </div> -->
+
+
+
+
+
+    <div class="mainGrid">
+
+        <div class="searchBar">
+            <app-search-bar (sendSearchText)="receiveFilter($event)"></app-search-bar>
+        </div>
+        <div class="sloganTop">
+            An Amazing Community Of Dev Sharing News,
+            Feel Free To Share, Like, Comment !
+        </div>
+        <div class="sort">
+            <div class="sortLatest" [ngClass]="{sortSelected: isSortedBy === 'Latest'}">
+                <div (click)="sortByLatest()" class="sortTextLatest">Latest</div>
+            </div>
+            <div class="sortTop"  [ngClass]="{sortSelected: isSortedBy === 'Top'}">
+                <div (click)="sortByTop()" class="sortTextTop">Top</div>
+            </div>
+        </div>    
+        <div class="tagList">
+            <app-tags-sidebar (sendSelectedTags)="getSelectedTagsId($event)"></app-tags-sidebar>
+        </div>
+        <div class="articlesBox"> 
+            <div class="oneArticle">
+                <app-small-card-articles *ngFor="let item of arrayArticlesDisplayed" [$id] = item.id></app-small-card-articles>
+            </div>
+        </div>
+
+        <div class="twitterNews">  
+            <app-twitter></app-twitter>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- <div class="row bottom">
+        <div class="col-sm-3 tagList">
+            <app-tags-sidebar (sendSelectedTags)="getSelectedTagsId($event)"></app-tags-sidebar>
+        </div>
+
+        <div class="col-sm-6 article-section">
+
+            <div class="row">
+                <div class="col-sm sortLatest" [ngClass]="{sortSelected: isSortedBy === 'Latest'}">
+                    <div (click)="sortByLatest()" class="sortTextLatest">Latest</div>
+                </div>
+
+                <div class="col-sm sortTop"  [ngClass]="{sortSelected: isSortedBy === 'Top'}">
+                    <div (click)="sortByTop()" class="sortTextTop">Top</div>
+                </div>
+            </div> 
+
+            <div class="row oneArticle">
+                <app-small-card-articles *ngFor="let item of arrayArticlesDisplayed" [$id] = item.id></app-small-card-articles>
+            </div>
+
+        </div>
+
+        <div class="col-sm-3 twitterNews">
+            <app-twitter></app-twitter>
+        </div>
+    </div>
+
+
+
+</div> -->
+

@@ -1,0 +1,50 @@
+
+ 
+  
+    <mat-dialog-actions class= "dialogContainer" >
+      
+      
+        <h2 mat-dialog-title>Edit my Article</h2>
+      
+
+      
+        <mat-form-field class="dialogArticleTitle" appearance="fill">
+          <mat-label>Title :</mat-label>
+            <textarea matInput
+            cdkTextareaAutosize
+            [(ngModel)]="data[0]"
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            class="dialogTextarea">
+          </textarea>
+        </mat-form-field>
+      
+
+      
+        <mat-form-field class="dialogArticleSynopsis" appearance="fill">
+          <mat-label>Tell your story :</mat-label>
+            <textarea matInput
+            cdkTextareaAutosize
+            [(ngModel)]="data[1]"
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="10"
+            cdkAutosizeMaxRows="20"
+            class="dialogTextarea">
+          </textarea>
+        </mat-form-field>
+      
+      <div> 
+        <span>Tags :</span>
+        {{data[2]}}
+      </div>
+
+      <div>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial click="updateArticle()">Validate</button>
+      </div>
+
+      
+    </mat-dialog-actions>
+  
+

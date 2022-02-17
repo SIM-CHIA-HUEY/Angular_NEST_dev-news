@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid navigation-bar">
+
+  <!-- LOGO -->
+  <a href="/">
+    <img class="logo"
+      alt="DEV.NEWS Logo"
+      src="/assets/devnews-logo.png"
+    />
+  </a>
+    
+    <!-- RIGHT SIDE : Buttons -->
+    <!-- USER LOGGED IN dropdown menu -->
+    <div *ngIf=" userLoggedIn && !adminLoggedIn && !loggedOut">
+      <!--Dropdown button title : user's email-->
+      <button class="logged-button" mat-button [matMenuTriggerFor]="menu">
+        <span class="hidden-mobile">{{displayEmail}}</span> <mat-icon>expand_more</mat-icon>
+      </button>
+
+      <!--Dropdown menu-->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item> <a routerLink="/newarticle">Post article </a> </button>
+        <button mat-menu-item> <a routerLink="/users/{{userId}}"> User profile </a> </button>
+        <hr />
+        <button mat-menu-item (click)="logOut()"> Logout </button>
+      </mat-menu>
+    </div>
+
+      <!-- ADMIN OR MODO LOGGED IN dropdown menu -->
+      <div *ngIf=" adminLoggedIn && !loggedOut">
+        <!--Dropdown button title : user's email-->
+        <button class="logged-button" mat-button [matMenuTriggerFor]="menu">
+          <span class="hidden-mobile">{{displayEmail}}</span> <mat-icon>expand_more</mat-icon>
+        </button>
+        <!--Dropdown menu-->
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item> <a routerLink="/newarticle"> Post article </a> </button>
+          <button mat-menu-item> <a routerLink="/users/{{userId}}"> User profile </a> </button>
+          <hr />
+          <button mat-menu-item> <a routerLink="/adminboard"> Dashboard </a> </button>
+          <hr />
+          <button mat-menu-item (click)="logOut()"> Logout </button>
+        </mat-menu>
+      </div>
+
+    <!-- ANY USER LOGGED OUT buttons -->
+    <div *ngIf=" loggedOut ">
+      <a class="register-button" mat-button routerLink="/register">Register</a>
+      <a class="login-button" mat-button routerLink="/login">Login</a>
+    </div>
+  
+  </div>
+</nav>
+
+
+

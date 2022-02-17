@@ -1,0 +1,32 @@
+<div class="main">
+    <div class="title">
+        <a href="/users/{{userId}}" >
+        <p><- Back to my Account</p>
+        </a>
+    </div>
+
+    <div class="title">
+        <p>Manage my Favorites</p>
+    </div>
+    <div>
+        <div class="articlesContainer" *ngFor="let item of arrayFavorites">
+            <div class="articleTitle">
+                {{item['articleTitle']}}
+            </div>
+            <div>
+                {{item['articleSynopsis']}}
+            </div>
+            <button class="buttonStyle2" (click)="removeFavorite()">Remove from favorites</button>
+
+        </div>
+        <div class="right">
+            <h3>Tags</h3>
+            <mat-chip-list selectable multiple  class="mat-chip-list-stacked" >
+            <mat-chip #c="matChip" *ngFor="let tag of arrayOfTags" (click)="toggleSelection(c)" [value]="tag.tagId" [selected]="tag.isSelected">
+                {{tag.tagName}}
+            </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+</div>
+

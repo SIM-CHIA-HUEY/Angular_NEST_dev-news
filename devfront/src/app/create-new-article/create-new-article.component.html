@@ -1,0 +1,62 @@
+<div class="main">
+      
+    <div class="newArticle">
+
+      <mat-card>
+        <mat-card-title-group>
+        
+        <mat-card-title>
+          <input matInput placeholder="Title..."
+          [(ngModel)]="articleTitle">
+        </mat-card-title>
+        
+        </mat-card-title-group>
+        <mat-card-content>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            placeholder="Article Synopsis..."
+            [(ngModel)]="articleSynopsis">
+          </textarea>
+
+        </mat-card-content>
+        <mat-card-actions>
+
+
+            <input type="file" class="file-input"
+              (change)="onFileSelected($event)" #fileUpload
+              name="uploaded_file">
+       
+              <div class="file-upload">
+       
+                <button class="buttonStyle1"
+                (click)="fileUpload.click()">
+                Upload file
+                <mat-icon>attach_file</mat-icon>
+                </button>
+                {{fileName || "No file uploaded yet."}}
+              </div>
+    
+              <button class="buttonStyle1" (click)="postArticle()">Publish</button>
+        </mat-card-actions>
+    </mat-card>
+       
+        <h3>Tags</h3>
+        <mat-chip-list selectable multiple >
+          <mat-chip #c="matChip" *ngFor="let tag of arrayOfTags" (click)="toggleSelection(c)" [value]="tag.tagId" [selected]="tag.isSelected">
+            {{tag.tagName}}
+          </mat-chip>
+        </mat-chip-list>
+        
+        <!-- <iframe [src]="testURL | safe"  
+        width="450px" height="250px"></iframe> -->
+
+    </div>
+    
+   
+
+    
+</div>
+

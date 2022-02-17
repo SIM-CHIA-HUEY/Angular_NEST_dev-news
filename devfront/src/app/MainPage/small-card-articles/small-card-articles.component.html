@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="box">
+
+        <!-- <div class="avatar" (click)="openPostView()">{{$avatar}}</div> -->
+        <div class="username" (click)="openPostView()">- Created by <b>{{$username}}</b></div>
+        <div class="date" (click)="openPostView()">published on {{$date}}</div>
+
+        <div class="borderBlock">
+            <div class="title" (click)="openPostView()">{{$articleTitle}}</div>
+            <div class="synopsis" (click)="openPostView()">{{$articleSynopsis}}</div>
+            <div class="tagList" (click)="openPostView()">{{$tagTitle}} </div>  
+            <div class="location" (click)="openPostView()">{{$location}}</div>
+        </div>
+
+        <div class="gridIcons">
+            <i class="bi bi-emoji-smile" (click)="openPostView()"></i>
+            <div class="numberLikes" (click)="openPostView()">{{$likes}}</div>
+            <i class="bi bi-emoji-frown" (click)="openPostView()"></i>
+            <div class="numberDislikes" (click)="openPostView()">{{$dislikes}}</div>
+
+            <i class="bi bi-chat-right-fill" (click)="openPostView()"></i>
+            <div class="numberComments" (click)="openPostView()">{{$comments}}</div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

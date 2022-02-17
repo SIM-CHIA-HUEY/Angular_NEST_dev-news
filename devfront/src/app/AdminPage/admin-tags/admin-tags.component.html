@@ -1,0 +1,21 @@
+<div class="box">
+    <p class="labelNewTag">Create a new tag</p>
+    <textarea class="newTag" rows="1" cols="33" placeholder="Tag name" [(ngModel)]="newTag"></textarea>
+    <button class="btn addTag" (click)="createNewTag()">Create</button>
+    <hr>
+    <p class="labelNewTag">List of available tags</p>
+    <table>
+            <tr *ngFor="let item of arrayTags">
+                <td>
+                    <input type="text" class="name" name="tagTitle" [(ngModel)]="item['tagTitle']">
+                </td>
+                <td>
+                    <button type="submit" class="addTag" (click)="updateTag(item['id'],item['tagTitle'])">Modify</button>
+                </td>
+                <td>
+                    <button class="addTag" (click)="deleteTag(item['id'])">Delete</button>
+                </td>
+            </tr>
+    </table>
+
+</div>

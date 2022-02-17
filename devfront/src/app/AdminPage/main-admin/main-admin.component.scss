@@ -1,0 +1,44 @@
+.page{
+    height:100vh;
+    padding-top:40px;
+    display:grid;
+    grid-template-columns: 3fr 9fr;
+    grid-template-areas:
+    "navbar panel";
+    z-index: -10;
+}
+
+.sidebar{
+    grid-area:navbar;
+    background-color: #38322B;
+    position: fixed;
+    width: 500px;
+    height: 200px;
+}
+
+@media (max-width: 665px) {
+    .btn{
+        font-size: small !important;
+    }
+}
+
+@media (min-width: 666px) {
+    .sidebar{
+        padding: 20px !important;    
+    }
+}
+
+.panel{
+    grid-area:panel;
+    background-color: #E5E5E5;
+    padding-top: 30px;
+    // height: 100%;
+}
+
+.btn{
+    color:white
+}
+
+.btn-sel {
+    background-color: #705D4A;
+}

@@ -1,0 +1,65 @@
+<div class="usersManagement">
+
+    <div class="gridUsersManagement" *ngFor="let item of $arrayUsers">
+
+        <div class="itemUsername">{{item['username']}}</div>
+        <div class="itemEdit"><a href="http://localhost:4200/users/{{item['id']}}"><button style="border: none; background-color: #38322B; 
+                        color: white;"> Edit </button></a></div>
+
+
+
+
+
+        <div class="itemDelete"><button (click)="removeUser(item['id'])" style="border: 2px solid; border-color: #38322B;
+                        background-color: white; 
+                        color: #38322B;"> Delete </button></div>
+
+
+
+
+        <div class="itemModo">
+
+            <input type="checkbox" value="{{item['isModo']}}" id="checkboxModoUser{{item['id']}}"
+                (click)="changeModoStatus(item)">
+            <input *ngFor-repeat="let $id of $arrayUsers" {{ $id.$arrayUsers }}>
+            <input *ngIf="item['isModo'] == true" type="checkbox" checked>
+            <input *ngIf="item['isModo'] == false" type="checkbox">
+
+            <label for="checkboxModoUser{{item['id']}}" aria-describedby="label">Modérateur</label>
+        </div>
+
+
+
+        <div class="itemAdmin">
+
+            <input type="checkbox" value="{{item['isAdmin']}}" id="checkboxAdminUser{{item['id']}}"
+                (click)="changeAdminStatus(item)">
+            <input *ngFor-repeat="let $id of $arrayUsers" {{ $id.$arrayUsers }}>
+            <input *ngIf="item['isAdmin'] == true" type="checkbox" checked>
+            <input *ngIf="item['isAdmin'] == false" type="checkbox">
+
+
+
+            <label for="checkboxAdminUser{{item['id']}}" aria-describedby="label">Administrateur</label>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- *ngIf="item['isModo'] == true; then #checkboxCkecked else #checkboxNotChecked;  -->
+
+<!-- <div "></div>
+                    <ng-template #thenBlock>Content to render when condition is true.</ng-template>
+                    <ng-template #elseBlock>Content to render when condition is false.</ng-template> -->
+
+
+<!-- *ngIf="item['isModo'] == false"; unchecked -->
+<!-- *ngIf="item['isModo'] == true" ; checked else unchecked -->

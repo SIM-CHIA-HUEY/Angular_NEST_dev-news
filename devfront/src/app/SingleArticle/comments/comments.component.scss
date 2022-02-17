@@ -1,0 +1,172 @@
+.commentBox{
+    display:grid;
+    grid-template-columns: 10% 10% 10% 10% 44% 5% 2% 5% 2% 2%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "image name name name name name name name name name"
+    "image ageOfComment ageOfComment ageOfComment ageOfComment ageOfComment ageOfComment ageOfComment ageOfComment ageOfComment"
+    "image age age age age age age age age age" 
+    "image comment comment comment comment comment comment comment comment comment"
+    "image reply modify delete . nbLikes logoLike nbDislikes logoDislike .";
+    background:Transparent;
+    width:50%; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+
+  .imgClass{
+    grid-area:image;
+  }
+
+  .ageOfComment{
+    grid-area:ageOfComment;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:italic;
+    margin-top:2px;
+    margin-bottom:5px;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .imgUser{
+    margin:2.5px;
+    width:25px;
+    height:25px;
+  }
+
+  .nameUser{
+    grid-area:name;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+  }
+  .ageOfComment{
+    grid-area:age;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:italic;
+    margin-top:2px;
+    margin-bottom:5px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .comment{
+    grid-area:comment;
+    padding:1%;
+    padding-bottom:2px;
+    text-align:left;
+    background:white;
+    border: solid grey;
+    border-width: 1px;
+    border-radius:5px;
+    font-family:cursive;
+    font-size:15px;
+    margin-bottom:5px;
+    font-family: 'Outfit', sans-serif;
+   
+  }
+  .short{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-family: 'Outfit', sans-serif;
+  }
+  .expanded{
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .commentEditMode{
+    grid-area:comment;
+    padding:1%;
+    margin-right:5%;
+    text-align:left;
+    background:white;
+    border: solid grey;
+    border-width: 1px;
+    border-radius:5px;
+    font-family:cursive;
+    font-size:15px;
+    margin-bottom:5px;  
+  }
+
+  .modify{
+    grid-area:modify;
+    text-align:left;
+    text-decoration: underline;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+  }
+
+  .delete{
+    grid-area:delete;
+    text-align:left;
+    text-decoration: underline;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+  }
+
+  .reply{
+    grid-area:reply;
+    text-align:left;
+    text-decoration: underline;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+  }
+
+  .validate{
+    grid-area:modify;
+    text-align:left;
+    text-decoration: underline;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+  }
+
+  .nbLikes{
+    grid-area:nbLikes;
+    justify-self: right;
+    padding-right : 5px;
+    text-align:left;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .logoLike{
+    grid-area:logoLike;
+    text-align:left;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+  }
+
+  .nbDislikes{
+    grid-area:nbDislikes;
+    justify-self: right;
+    padding-right : 5px;
+    text-align:left;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .logoDislikes{
+    justify-items: left;
+    grid-area:logoDislike;
+    text-align:left;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+  }
+
+  .commentNewMode{
+    padding:1%;
+    width:100%;
+    background:white;
+    border: solid grey;
+    border-width: 1px;
+    border-radius:5px;
+    font-family:cursive;
+    font-size:15px; 
+  }
+  

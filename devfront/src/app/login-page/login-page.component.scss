@@ -1,0 +1,191 @@
+.login-page{
+  width: 100%;
+  height: 99%;
+  margin: 0;
+  background-image: url(../../assets/bg-paper.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #E8D8BB;
+}
+
+// Responsive : Padding between top of page and title
+@media (max-width: 1300px) {
+  .login-page{
+    padding-top: 15vh;
+  }
+}
+@media (min-width: 1301px) {
+  .login-page{
+    padding-top: 20vh;
+  }
+}
+
+/* Login's page title */
+.login-title-div {
+  text-align: center;
+  font-family: "Slabo 27px", serif ;
+}
+
+.login-title-div span {
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.login-title {
+  letter-spacing: 3px;
+  color: #6B5743;
+  padding: 20px;
+}
+// Responsive : Title font size
+@media (max-width: 1060px) {
+  .login-title {
+    font-size: 4vw;
+  }
+}
+@media (min-width: 1061px) {
+  .login-title {
+    font-size: 3vw;
+  }
+}
+
+/* Padding top of the whole register part */
+.login-row {
+  padding-top: 10%;
+  margin:0%;
+}
+
+/* Login form on the left */
+.login-form {
+  padding: 60px;
+  border-left: 1px solid;
+}
+
+.col-form-label {
+  font-family: "Slabo 27px", serif ;
+  letter-spacing: 3px;
+}
+
+input {
+  width: 100%;
+}
+
+
+// Responsive : Buttons group
+@media (max-width: 1300px) {
+  .form-buttons {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 1301px) {
+  .form-buttons {
+    padding-left: 30%;
+    padding-bottom: 30px;
+  }
+}
+
+.btn {
+  padding : 5px 50px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.danger-alert {
+  color: red;
+}
+
+input:hover{
+ border:2px solid rgb(24, 233, 4);
+
+}
+
+input:focus{
+ border:2px solid rgb(24, 233, 4);
+
+}
+
+.btn-dark:hover{
+ border:2px solid rgb(24, 233, 4);
+}
+
+.btn-outline-dark:hover{
+ border:2px solid rgb(24, 233, 4);
+}
+
+button:hover{
+ border:2px solid rgb(24, 233, 4);
+}
+
+
+
+
+
+
+/* Text extract on the right */
+// Responsive : Content's border changes
+@media (max-width: 686px) {
+  .login-content {
+    padding: 60px;
+    border-top: 1px solid;
+  }
+}
+@media (min-width: 687px) {
+  .login-content {
+    padding: 60px;
+    border-left: 1px solid;
+  }
+}
+
+.content-image{
+  width: 100px;
+  padding-bottom: 20px;
+}
+
+.login-extract-title {
+  font-family: "Slabo 27px", serif ;
+  letter-spacing: 3px;
+}
+
+
+/* Social media registration */
+.third-party-register {
+  border-top: solid 1px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+// Responsive : Social media buttons appeareance
+@media (max-width: 1173px) {
+  .social-button {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    margin: 10px;
+    width: 100%;
+  }
+}
+@media (min-width: 1174px) {
+  .social-button {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    margin: 30px;
+  }
+}
+
+.social-media-logo {
+  width: 30px;
+  margin-right: 10px;
+}
+
+a {
+  font-family: "Slabo 27px", serif;
+  text-decoration: none;
+  color: black;
+  padding: 30px;
+}

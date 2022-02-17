@@ -1,0 +1,37 @@
+<div class="box">
+    <p class="labelNewComment">List of available comments</p>
+
+    <table mat-table [dataSource]="arrayComments" multiTemplateDataRows class="mat-elevation-z8">
+
+       <!-- Definition des colonnes  -->
+       <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container>
+
+      <!-- Partie qui s'expand -->
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+          <div class="example-element-detail"
+               [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+              <textarea class="element-content" rows="4" name="commentTitle" [(ngModel)]="element.commentContent" maxlength="255"></textarea>
+            <div class="example-element-description">
+                <button type="submit" class="addComment" (click)="updateComment(element.id,element.commentContent)">Modify</button>
+                <button class="addComment" (click)="deleteComment(element.id)">Delete</button>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Partie visible (contenu) -->
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+      
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        
+    </table>
+</div>

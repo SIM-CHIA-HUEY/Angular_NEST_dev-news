@@ -1,0 +1,205 @@
+
+
+.ajust{
+    margin-left: 5%;
+}
+.articleCard {
+    max-width: 500px;
+    margin-bottom: 8px;
+  }
+.articlesCards {
+    margin-left: 2%;
+    margin-top: 2%;
+    overflow-x: hidden;
+    width: 90%;
+    
+}
+.articlesContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+.articleContent {
+    margin-top: 2%;
+    float: right;
+}
+
+.buttonStyle1 {
+    background: #705D4A;
+    border-radius: 5px;
+    height: 39px;
+    color: #FFFFFF;
+    margin-top:2px;
+    margin-bottom:2px;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+.buttonStyle2 {
+    background: #FFFFFF;
+    border-radius: 5px;
+    color: #030303;
+    height: 39px;
+}
+.buttonBox{
+    margin-left: 25%;
+}
+.checkbox {
+    align-self: center;
+}
+
+.dialogArticleTitle {
+    font-weight: bold;
+    margin-top: 2%;
+    width: 100%;
+}
+.dialogArticleSynopsis {
+    margin-top: 2%;
+    width: 100%;
+}
+.dialogContainer {
+    display: flex;
+    flex-direction: column;
+}
+.dialogTextarea {
+    width: 100%;
+}
+
+.email {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 2%;
+    padding-left: 5%;
+    width:95%;
+}
+.emailInput {
+    margin-left: 7%;
+}
+
+.favoritesArticles {
+    height: 500px;
+    margin-left: 2%;
+    margin-top: 2%;
+    overflow-x: hidden;
+    width: 90%;
+}
+.favoritesContainer{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+.favoriteTags {
+    margin-top: 2%;
+    margin-left: 2%;
+    float: right;
+}
+
+img {
+    vertical-align: middle;
+  }
+
+input {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #FFFFFF;
+    margin-left: 15%;
+    margin-right: 5%;
+    width: 250px;
+  }
+
+.main{
+    margin-top:6%;
+}
+
+mat-chip {
+    max-width: 200px;
+  }
+
+mat-tab-group {
+    margin-left: 15%;
+    width: 70%;
+}
+
+.newArticle {
+    background: #FFFFFF;
+    margin-bottom:1%;
+    margin-left: 5%;  
+    margin-top:1%;
+    width: 90%;
+}
+.password {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 2%;
+    padding-left: 5%;
+    width:95%;
+}
+
+.passwordConfirm {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 2%;
+    padding-left: 5%;
+    width:95%;
+}
+.profile{
+    align-items: flex-start;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    margin-left: 25%;
+    margin-top: 1%;
+    width: 50%;
+    
+}
+.profilePicture{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    margin-top: 5%;
+    width: 95%;
+}   
+
+.profilePictureButton{
+    background: #FFFFFF;
+    border-radius: 5px;
+    color: #030303;
+    height: 39px;
+    justify-self: right;
+    margin-left: 10%;    
+}
+
+.save {
+    background: #38322B;
+    align-self: center;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+}
+.title{
+    border-bottom: solid;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.username {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-top: 2%;
+    padding-left: 5%;
+    width:95%;
+}
+
+

@@ -1,0 +1,143 @@
+<div class="register-page">
+  <img class="register-bg">
+
+  <div class="register-title-div">
+    <span class="register-title">THE DAILY DEV.NEWS <span style="color: #000000; border-style: none">REGISTER</span></span>
+  </div>
+
+  <div class="row register-row">
+
+    <div class="col-sm register-content">
+      <img class="content-image" src="assets/icons-register.png">
+      <p class="register-extract-title"> {{randomTitle}} </p>
+      <p> {{randomArticle}} </p>
+    </div>
+
+    <div class="col-sm register-form">
+
+      <form  #myForm="ngForm" (ngSubmit)="submit()">
+        <!-- <div class="form-group row" [formGroup]="registerForm" (ngSubmit)="submit()"> -->
+          
+          <!-- Username input -->
+          <div class="form-group row" >
+          <label for="username" class="col-sm-3 col-form-label">USERNAME:</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="username" name="username" value={username}
+            required minlength="4" maxlength="10"
+            [(ngModel)]="form.username" #username="ngModel">  
+              <!-- Username's validations error messages -->
+              <div *ngIf="username.invalid && (username.dirty || username.touched)"
+              class="danger-alert">
+                <div *ngIf="username.errors?.['required']">
+                  * Username is required.
+                </div>
+                <div *ngIf="username.errors?.['minlength']">
+                  * Username must be at least 4 characters long.
+                </div>
+                <div *ngIf="username.errors?.['maxlength']">
+                  * Username must be at most 10 characters
+                </div>
+
+              </div>
+
+          </div>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-group row">
+          <label for="email" class="col-sm-3 col-form-label">EMAIL:</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="email" name="email"
+            required email 
+            [(ngModel)]="form.email" #email="ngModel">
+            <!-- Email's validations error messages -->
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" 
+            class="danger-alert">
+              <div *ngIf="email.errors?.['required']">
+                * Email is required
+              </div>
+              <div *ngIf="email.errors?.['email']">
+                * Email must be a valid email address
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-group row">
+          <label for="password" class="col-sm-3 col-form-label">PASSWORD:</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="password" name="password"
+            required minlength="8" pattern="^(?=.*?\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]+$"
+            [(ngModel)]="form.password" #password="ngModel">
+            <!-- Password's validations error messages -->
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" 
+            class="danger-alert">
+              <div *ngIf="password.errors?.['required']">
+                * Password is required
+              </div>
+              <div *ngIf="password.errors?.['minlength']">
+                * Password must be at least 8 characters long.
+              </div>
+              <div *ngIf="password.errors?.['pattern']">
+                * Please include at least 1 letter, 1 number and 1 uppercase.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Password Control input -->
+        <div class="form-group row">
+          <label for="passwordControl" class="col-sm-3 col-form-label">PASSWORD CONTROL:</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="passwordControl" name="passwordControl"
+            required equalTo appForbiddenName="bob"
+            [(ngModel)]="form.passwordControl" #passwordControl="ngModel">
+            <!-- Password's validations error messages -->
+            <div *ngIf="passwordControl.invalid && (passwordControl.dirty || passwordControl.touched)" 
+            class="danger-alert">
+              <div *ngIf="passwordControl.errors?.['required']">
+                * Confirm password is required
+              </div>
+
+              <!-- Custom validators tests 1-->
+              <div *ngIf="passwordControl.errors?.['equalTo']">
+                * Passwords have to be the same.
+              </div>
+              <!-- Custom validators tests 2-->
+              <div *ngIf="passwordControl.errors?.['appForbiddenName']">
+                * Passwords cannot be bob.
+              </div>
+
+          </div>
+        </div>
+        </div>
+        <div class="form-buttons">
+          <button class="btn btn-outline-dark" (click)="reset()">Cancel</button>
+          <button type="submit" class="btn btn-dark" [disabled]="!myForm.valid">Send</button>  
+        </div>
+      </form>
+
+      <div class="row third-party-register">
+
+        <a href="/" class="github"> <img class="social-media-logo" src="assets/github-logo.png">Register with GitHub</a>
+        <a href="/" class="github"> <img class="social-media-logo" src="assets/google-logo.png">Register with Google</a>
+      
+        <!-- <button class="social-button" (click)="loginWithRedirect()" mat-raised-button>
+          <img class="social-media-logo" src="assets/github-logo.png">
+          Log in With GitHub
+        </button> 
+
+        <button class="social-button" (click)="loginWithGoogle()" mat-raised-button>
+          <img class="social-media-logo" src="assets/google-logo.png">Log in with
+            Google
+        </button> -->
+
+      </div>
+    
+    </div>
+  </div>
+
+
+</div>
+
